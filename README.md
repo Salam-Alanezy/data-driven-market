@@ -59,5 +59,5 @@ For utviklingsprosessen ble følgende teknologier valgt på grunn av pris og kom
 - Python
 - Flask
 - Firebase
-- HTML/CSS
+- Jinja2
 - Bootstrap
