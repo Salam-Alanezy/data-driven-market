@@ -1,5 +1,5 @@
 # Data-Driven-Market
-
+![Dashboard](https://data.alanezconsulting.no/images/dashboard.png)
 ## Introduksjon
 Data-Driven-Market er et CRM-system designet spesifikt for Lilleborg Dagligvare AS, en voksende dagligvarebutikk. Med tanke på utfordringene bedriften møter i produktadministrasjonen, sikter dette CRM-systemet mot å effektivisere og strømlinjeforme butikkens daglige drift.
 
