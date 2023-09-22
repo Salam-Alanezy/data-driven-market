@@ -36,7 +36,9 @@ Fungerer lignende som handlelisten; brukere kan manuelt legge inn eller skanne p
 
 ### Lager- og utløpsdatovarsler
 Ved regelmessig varetelling og innlogging av nyinnkjøpte varer kan brukeren motta varsler angående lagerstatus og utløpsdatoer. Dette sikrer at produktene alltid er tilgjengelige og bidrar til å minimere svinn.
-![Bildekarusell]([https://data.alanezconsulting.no/slideshow.html])
+
+![Bildekarusell](https://data.alanezconsulting.no/slideshow.html)
+
 
 ### Bransjekalender
 Kalenderen gir oversikt over viktige hendelser i dagligvarebransjen, som helligdager og spesielle feiringer, og tilbyr markedsføringsråd tilpasset disse hendelsene.
