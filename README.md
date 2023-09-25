@@ -1,5 +1,5 @@
 <div align="left">
-<img src="https://ddm-doc-img.alanezconsulting.no/data-driven-market.png" width="300">
+<img src="https://ddm-doc-img.alanezconsulting.no/data-driven-market.png" width="500">
 </div>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
