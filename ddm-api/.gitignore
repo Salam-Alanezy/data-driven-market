@@ -1,0 +1,13 @@
+.env
+venv
+data
+data.py
+convert.py 
+Reports
+*__pycache__
+*.json
+test.py 
+*.csv
+*.xlsx
+*.json
+*.log
