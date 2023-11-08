@@ -1,0 +1,71 @@
+
+{% block content %}
+<div class="col-lg-5 col-xl-4 d-flex">
+    <div class="card shadow mb-4 main-card flex-grow-1">
+        <div class="card-header d-flex justify-content-between align-items-center main-card-header">
+            <h6 class="fw-bold m-0 main-card-title">Fordeling av produkter med utløpsdato</h6>
+        </div>
+        <div class="card-body">
+            <div class="chart-area">
+                <canvas id="account-chart"></canvas>
+            </div>
+            <div class="text-center small">
+                {% for product_name, count in expiring_products_count2.items() %}
+     
+                <span class="me-2">
+                    
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+         <!-- Include the Chart.js library -->
+         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+         <script>
+           document.addEventListener("DOMContentLoaded", function() {
+               const expiringProductsData = {{ expiring_products_count2.values() | list | tojson }};
+               const productIdentifiers = {{ expiring_products_count2.keys() | list | tojson }};
+               const colors = {{ colors | tojson }};
+       
+               const sortedData = productIdentifiers.map((name, index) => {
+                   const colorIndex = productIdentifiers.indexOf(name);
+                   return {
+                       name,
+                       data: expiringProductsData[colorIndex],
+                       color: colors[colorIndex]
+                   };
+               });
+               
+            
+               const accountChartCanvas = document.getElementById("account-chart");
+               const accountChart = new Chart(accountChartCanvas, {
+                   type: "doughnut",
+                   data: {
+                       labels: sortedData.map(item => item.name + ': Antall ' + item.data ), // Use the sorted product names as labels
+                       datasets: [
+                           {
+                               data: sortedData.map(item => item.data),
+                               backgroundColor: sortedData.map(item => item.color), // Use the sorted colors
+                               borderColor: sortedData.map(item => "rgba(0,0,0,0.1)"),
+                           },
+                       ],
+                   },
+                   options: {
+                       maintainAspectRatio: false,
+                       legend: {
+                           display: false,
+                           labels: {
+                               fontStyle: "normal",
+                           },
+                       },
+                       title: {
+                           fontStyle: "normal",
+                       },
+                   },
+               });
+           });
+       </script>
+{% endblock %}

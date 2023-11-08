@@ -1,0 +1,122 @@
+{% block head %}
+
+<style>
+  .menu-text {
+    display: none;
+ 
+  }
+  
+</style>
+{% endblock %}
+{% block content %}
+
+
+<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" style="background: #2ed4ae; z-index: 2; transform: translateX(-100%);">
+  <div class="container-fluid">
+      <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+          <div class="sidebar-brand-icon rotate-n-15" style="transform: rotate(0deg)"></div>
+          <div class="sidebar-brand-text mx-3"></div>
+      </a>
+      <hr class="sidebar-divider my-0" />
+      <ul class="navbar-nav text-light" id="accordionSidebar">
+    <li class="nav-item">
+      <a class="nav-link active" href="/"
+        ><i
+          class="fas fa-tachometer-alt"
+          style="
+            color: #FFFFFF;
+            font-size: 23px;
+            width: 47.3125px;
+          "
+        >
+        </i
+        ><span class="menu-text"style="font-size: 13px; color: #FFFFFF;">Dashboard</span></a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/products-page">
+        
+        <i
+          class="fas fa-boxes"
+          style="
+            color: #FFFFFF;
+            font-size: 23px;
+            width: 47.3125px;
+          ">
+        </i>
+        <span class="menu-text"style="font-weight: bold; font-size: 13px; color: #FFFFFF;">Produkt registrering</span>
+        </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"
+        >
+        <i
+          class="fas fa-chart-bar"
+          style="
+            color: #FFFFFF;
+            font-size: 23px;
+            width: 47.3125px;
+          "
+        >
+        </i
+        ><span class="menu-text"style="font-weight: bold; font-size: 13px; color: #FFFFFF;"
+          >Innsikt</span
+        ></a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"
+        >
+       
+        <i class="fas fa-search-dollar" style="
+        color: #FFFFFF;
+        font-size: 23px;
+        width: 47.3125px;
+      "></i>
+        
+        <span class="menu-text"style="font-weight: bold; font-size: 13px; color: #FFFFFF;"
+          >Utforsk nye produkter</span
+        ></a
+      >
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="/planing"
+        >
+       
+        <i class="fas fa-calendar" style="
+        color: #FFFFFF;
+        font-size: 23px;
+        width: 47.3125px;
+      "></i>
+        
+        <span class="menu-text"style="font-weight: bold; font-size: 13px; color: #FFFFFF;"
+          >Planning</span
+        ></a
+      >
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#"
+        >
+       
+        <i class="fas fa-ad" style="
+        color: #FFFFFF;
+        font-size: 23px;
+        width: 47.3125px;
+      "></i>
+        
+        <span class="menu-text"style="font-weight: bold; font-size: 13px; color: #FFFFFF;"
+          >Markedsføring</span
+        ></a
+      >
+    </li>
+
+  </ul>
+        <div class="text-center d-none d-md-inline">
+          
+        </div>
+    </div>
+</nav>
+
+{% endblock %}  

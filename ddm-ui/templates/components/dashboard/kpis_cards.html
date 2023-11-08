@@ -1,0 +1,127 @@
+{% block content %}
+<div class="row d-xxl-flex">
+    <div class="col-md-6 col-xl-3 col-xxl-3 mb-4">
+      <div
+        class="card shadow border-start-primary py-2 kpi-cards "
+        style="box-shadow: 0px 0px 2px 7px var(--bs-card-cap-bg);"
+      >
+        <div class="card-body">
+          <div class="row align-items-center no-gutters">
+            <div class="col-xxl-8 me-2">
+              <div
+                class="text-uppercase text-primary fw-bold text-xs mb-1"
+              >
+                <span class="kpi-cards-title">Antall unike produkter</span>
+              </div>
+              <div class="text-dark fw-bold h5 mb-0">
+                <span class="kpi-cards-value"
+                  >{{total_products_count}}</span
+                >
+              </div>
+            </div>
+            <div class="col-xxl-3 me-2">
+              <i class="fas fa-boxes kpi-cards-icon" ></i>
+            
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="col-md-6 col-xl-3 col-xxl-3 mb-4">
+      <div
+        class="card shadow border-start-primary py-2 kpi-cards"
+        style="
+          
+         
+        "
+      >
+        <div class="card-body">
+          <div class="row align-items-center no-gutters">
+            <div class="col-xxl-8 me-2">
+              <div
+                class="text-uppercase text-primary fw-bold text-xs mb-1"
+              >
+                <span class="kpi-cards-title">Handleliste</span>
+              </div>
+              <div class="text-dark fw-bold h5 mb-0">
+                <span class="kpi-cards-value"
+                  >{{shopping_list_count}}</span
+                >
+              </div>
+            </div>
+            <div class="col-xxl-3 me-2">
+              <i class="fas fa-shopping-basket kpi-cards-icon"  ></i>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-xl-3 col-xxl-3 mb-4">
+      <div
+        class="card shadow border-start-primary py-2 kpi-cards"
+        style="
+          
+         
+        "
+      >
+        <div class="card-body">
+          <div class="row align-items-center no-gutters">
+            <div class="col-xxl-8 me-2">
+              <div
+                class="text-uppercase text-primary fw-bold text-xs mb-1"
+              >
+                <span class="kpi-cards-title">Tidskritiske tilbud</span>
+              </div>
+              <div class="text-dark fw-bold h5 mb-0">
+                <span class="kpi-cards-value"
+                  >{{expiring_soon_count}}</span
+                >
+              </div>
+            </div>
+            <div class="col-xxl-3 me-2">
+              <i class="far fa-clock kpi-cards-icon"></i>
+           
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 col-xl-3 col-xxl-3 mb-4">
+      <div
+        class="card shadow border-start-primary py-2 kpi-cards"
+    
+      >
+        <div class="card-body">
+          <div class="row align-items-center no-gutters">
+            <div class="col-xxl-8 me-2">
+              <div
+                class="text-uppercase text-primary fw-bold text-xs mb-1"
+              >
+                <span class="kpi-cards-title">Kommende eventer</span>
+              </div>
+              <div class="text-dark fw-bold h5 mb-0">
+                <span class="kpi-cards-value"
+                  >Halloween 31.08.2023</span
+                >
+              </div>
+            </div>
+            <div class="col-xxl-3 me-2">
+              <i class="fas fa-calendar-day kpi-cards-icon"></i>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+         
+    
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  {% endblock %}

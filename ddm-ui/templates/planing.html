@@ -1,0 +1,141 @@
+{% extends "base.html" %} 
+
+{% block head %}
+<title>Planning</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+<!-- TUI Calendar CSS -->
+<link rel="stylesheet" href="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.css" />
+<!-- TUI Calendar JavaScript -->
+<script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid" id="content" style="margin-top: 64px">
+  <div
+    class="d-sm-flex justify-content-between align-items-center justify-content-xxl-end mb-4"
+  ></div>
+
+  <!-- KPI Cards Section -->
+  <div class="row">
+    <!-- Preparation for Event Card -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div
+                class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+              >
+                Fullført forberedelsesliste
+              </div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">
+                80% forberedelser fullført
+              </div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-check-circle fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marketing Tips Card -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div
+                class="text-xs font-weight-bold text-success text-uppercase mb-1"
+              >
+                Antall nye markedsføringstips
+              </div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">
+                5 nye tips denne måneden
+              </div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-lightbulb fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event Planning Card -->
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div
+                class="text-xs font-weight-bold text-warning text-uppercase mb-1"
+              >
+                Dager til neste event
+              </div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800">
+                15 dager til neste event
+              </div>
+            </div>
+            <div class="col-auto">
+              <i class="fas fa-clock fa-2x text-gray-300"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Events and Calendar Section -->
+    <div class="row mt-4 d-flex align-items-stretch">
+        <!-- Left side: Upcoming Events List -->
+        <div class="col-lg-6 col-md-12 mb-4">
+            <div class="card shadow" style="max-height: 25%;">
+                <div class="card-header bg-primary text-white">Kommende Events</div>
+                <div class="list-group" style="overflow-y: auto">
+                    {% for event in events %}
+                    <a href="#" class="list-group-item list-group-item-action" style="background-color: {{ event.color }};">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1" style="font-weight: bold">{{ event.evnetNameNO }}</h5>
+                            <small style="color: grey">01.01.2024</small>
+                        </div>
+                        <p class="mb-2">{{ event.description }}</p>
+                        <small style="opacity: 0.6">{{ event.TypicalGoodsinHighDemand }}</small>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+       <!-- Right side: Tui Calendar -->
+       <div class="col-lg-6 col-md-12 mb-4" >
+        <div class="card shadow" style="max-height: 50vh">
+            <div class="card-header" >Kalender</div>
+            <div class="card-body">
+                <div id="calendar"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Initialize Tui Calendar -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var calendar = new tui.Calendar("#calendar", {
+        defaultView: "month",
+        taskView: true,
+        template: {
+            monthDayname: function(dayname) {
+                return '<span class="calendar-week-dayname-name">' + dayname.label + "</span>";
+            },
+        },
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,144 @@
+/* Common styles for all screen sizes */
+.custom-table {
+    background-color: #ffffff;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    color: #000000;
+  }
+  
+
+  
+  .custom-table th {
+    background-color: #2cd3ac;
+  }
+  tr.td.img {
+    
+        text-align: center;
+     
+    
+  }
+  .custom-table th,
+  .custom-table td {
+    border: 1px solid #dee2e6;
+  }
+  
+  .custom-table .btn {
+    color: #000000;
+  }
+  
+  .custom-table .btn-success {
+    background-color: #2cd3ac00;
+  }
+  
+  .custom-table .btn-primary {
+    background-color: #1a73e8;
+  }
+  
+  .custom-table .btn-info {
+    background-color: #34a0a4;
+  }
+  
+  .custom-table .btn:hover {
+    opacity: 0.8;
+  }
+  
+  /* Adjust spacing as needed */
+  .custom-table .table-responsive {
+    margin-bottom: 10px;
+  }
+  
+  .custom-table .table-responsive table {
+    margin-bottom: 0;
+  }
+  
+  .custom-table .row {
+    justify-content: center;
+  }
+  
+  .custom-table .col-4 {
+    margin-bottom: 10px;
+  }
+  
+  .custom-table .btn {
+    height: 5vh;
+    font-size: 16px;
+  }
+  
+  /* CSS to center the image in the container */
+  .image-container {
+    display: flex;
+    justify-content: center;
+  
+    margin-bottom: 10vh;
+  }
+  
+  .image-container img {
+    max-width: 40%;
+    height: auto;
+    max-height: 30%;
+
+  }
+  
+  @media screen and (max-width: 2000px) {
+    .col-md-4 {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+    
+    .col-md-8 {
+      width: 90%;
+    }
+  
+    .custom-table .btn {
+      height: 4vh;
+    }
+    
+    .image-container img {
+      max-width: 60%;
+      max-height: 20%;
+    }
+  }
+  .productCostumForm{
+    padding-top: 5vh;
+}
+
+  /* Responsive styles for smaller screens */
+  @media screen and (max-width: 768px) {
+    .col-md-4 {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    .col-md-8 {
+      width: 100%;
+    }
+  
+    .custom-table .btn {
+        height: 7vh;
+    }
+    
+    .image-container img {
+      max-width: 60%;
+      max-height: 20%;
+    }
+  }
+  
+
+  /* Center the scanner */
+.viewport {
+    display: flex;
+ 
+    align-items: center;
+    height: 300px ; /* Set an appropriate height */
+    margin: 0 auto;
+    background-color: #ffffff;
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media screen and (max-width: 768px) {
+    .viewport {
+      height: 200px;
+    }
+  }

@@ -1,0 +1,74 @@
+.kpi-cards{
+    background: #f9fbfa;
+    border-color: #f9fbfa;
+    border-left-color: #f9fbfa;
+
+}
+
+.kpi-cards-title{
+    color: #6be0c5
+}
+.kpi-cards-icon{
+    font-size: 32px; 
+    color: #1f9478;
+}
+
+.kpi-cards-value{
+    color: #1f9478;
+    font-size: 18px; 
+}
+
+.main-card{
+    background: #f9fbfa; 
+    border-color: #f9fbfa;
+}
+
+.tui-full-calendar-layout.tui-view-1.tui-view-9{
+    height: 30vh !important;
+}
+.tui-full-calendar-month.tui-view-4.tui-view-5.tui-full-calendar-vlayout-container{
+    height: 30vh !important;
+}
+
+.tui-full-calendar-month-week-item{
+    height: 3vh !important;
+}
+.main-card-title{
+    border-color: #2cd3ac; color:#1f9478
+}
+
+.main-card-header{
+    background: #f9fbfa;
+    border-color: #6be0c5;
+    color: #6be0c5;
+}
+.main-card-body{
+    height: 397px;
+}
+.table-header{
+    background-color: #2cd3ac; 
+    color: #ffffff;
+}
+.table-body{
+    background-color:  color= #ffffff
+}
+
+.save-button{
+    background-color:#0CA47C;
+    color:#ffffff;
+    
+}
+
+table .expiring-row {
+        color: white !important; 
+    }
+
+.button-spaces{
+    padding-top: 3vh;
+    
+}
+
+.btn-hamburg{
+    color:#1f9478;
+    font-size: 3vh;
+}

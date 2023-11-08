@@ -1,0 +1,48 @@
+{% block content %}
+
+<div class="container-fluid py-5" id="table-section">
+    <div class="row">
+        <table id="storageDataTable" class="table table-striped table-bordered histoy-table" cellspacing="0" width="100%">
+            <thead>
+                <tr class="table-header">
+                  <th>Bilde</th>  
+                  <th>EAN</th>
+                    <th>Produktnavn</th>
+                    <th>Leverandør</th>
+                    <th>Antall</th>
+                    <th>Best før dato</th>
+                    <th>Ordinær pris</th>
+       
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Positions -->
+                {% for product in products %}
+                <tr class=" {{ 'expiring-row' if product.is_expiring_soon else '' }}" style="background-color: {{ '#ff8080' if product.is_expiring_soon else '#ffffff' }};">
+                  <td class="text-center"><img src={{ product.image }} height="30" width="30" ></td>  
+                  <td>{{ product.ean }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.brand }}</td>
+                    <td>{{ product.count }}</td>
+                    <td>{{ product.earliestExDate }}</td>
+                    <td>{{ product.price }}</td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="row justify-content-between button-spaces">
+          <div class="col-auto">
+          
+          </div>
+
+          <div class="col-auto">
+            <!-- Save Button -->
+            <a href="/product-counting" class="btn btn-warning">Endre/ Legg til</a>
+          </div>
+
+        </div>
+    </div>
+ </div>
+
+ {% endblock %}

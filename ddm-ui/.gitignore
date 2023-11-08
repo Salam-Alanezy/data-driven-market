@@ -1,0 +1,12 @@
+.env
+venv
+*barcode-scanner.js
+*xlsx
+scanner.py
+*.csv
+*.xlsx
+*.pyc
+*.pyc
+*.xlsx
+*.json
+

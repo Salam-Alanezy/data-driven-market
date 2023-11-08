@@ -1,0 +1,67 @@
+
+{% block content %}
+<div>
+<div
+                    class="card-header d-flex justify-content-between align-items-center main-card-header"
+                   
+                  >
+                    <h6
+                      class="fw-bold m-0 main-card-title"
+                      
+                    >
+                      Handleliste
+                    </h6>
+                    
+                  </div>
+                  <div class="card-body ">
+                    <div
+                      class="chart-area"
+                     
+                    >
+                    <table
+                    id="shoppingList"
+                    class="table table-striped table-bordered histoy-table"
+                    cellspacing="0"
+                    width="100%"
+                  >
+                    <thead>
+                      <tr class="table-header">
+                        <th>Bilde</th>
+               
+                        <th>Produktnavn</th>
+                        <th>Leverandør</th>
+                        <th>Antall</th>
+                        <th>Registeret</th>
+                     
+                  
+                      </tr>
+                    </thead>
+                    <tbody >
+                      <!-- Positions -->
+                      {% for shop in shopping_list %}
+                      <tr class="table-body">
+                        <td class="text-center"><img src={{ shop.image }} height="30" width="30" ></td>  
+                
+                          <td>{{ shop.name }}</td>
+                          <td>{{ shop.brand }}</td>
+                          <td>{{ shop.count }}</td>
+                          <td>{{ shop.createdAt }}</td>
+                         
+                      </tr>
+                      {% endfor %}
+                  </tbody>
+                  </table>
+                  <div class="row justify-content-between">
+                    <div class="col-auto">
+             
+                    </div>
+
+                    <div class="col-auto">
+                      <!-- Save Button -->
+                      <a href="/shopping_list" class="btn btn-warning">Endre/ Legg til</a>
+                    </div>
+
+                  </div> </div>
+                
+
+                  {% endblock %}

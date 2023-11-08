@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Barcode Scanner</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- Include Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <!-- Include Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container-fluid py-5">
+        <h1 class="text-center mb-5">Product Scanner</h1>
+
+        <div class="row">
+            <div class="col-md-6"></div>
+            <!-- Product Scanner Area -->
+            <div class="col-md-3">
+                <div id="scanner" class="viewport mb-5"></div>
+                <!-- Scan Button -->
+                <div class="text-center">
+                    <button id="start-button" class="btn btn-primary">
+                        <i class="fas fa-barcode"></i> Start Scanning
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Product Table -->
+            <div class="col-md-8">
+                <div class="table-responsive">
+                    <table id="product-table" class="table mt-5">
+                    <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Action</th> <!-- New column header for 'Delete' action -->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- Rows added dynamically -->
+                    </tbody>
+                </table>
+                <div class="row buttons-row">
+                    <div class="col-md-6 buttons-col ">
+                        <!-- Send Button -->
+                        <div class="text-center">
+                            <button id="save-button" class="btn btn-success buttons">
+                                <i class="fas fa-save"></i> Send
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 buttons-col" >
+                        <!-- Download Button -->
+                        <div class="text-center">
+                            <button id="download-button" class="btn btn-primary buttons">
+                                <i class="fas fa-download"></i> Last
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals (hidden by default) -->
+
+        <!-- Product Selection Modal -->
+        <div id="product-selection" class="modal">
+            <!-- Modal Content added dynamically -->
+        </div>
+
+        <!-- Quantity Selection Modal -->
+        <div id="quantity-selection" class="modal">
+            <!-- Modal Content added dynamically -->
+        </div>
+
+        <!-- Product Info Form Modal -->
+        <div id="product-info-form" class="modal">
+            <div class="modal-content">
+                <h4>Enter Product Info</h4>
+                <form>
+                    <div class="form-group">
+                        <label for="product-name-input">Product Name</label>
+                        <input type="text" id="product-name-input" class="form-control" placeholder="Enter Product Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="product-quantity-input">Quantity</label>
+                        <input type="number" id="product-quantity-input" class="form-control" placeholder="Enter Quantity">
+                    </div>
+                    <div class="mt-3">
+                        <button class="btn btn-primary" id="product-info-submit-button">OK</button>
+                        <button class="btn btn-secondary" id="product-info-cancel-button">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error-container" class="alert alert-danger" style="display:none; padding-top: 3vh;">
+            <button id="error-close-button" type="button" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <span id="error-message"></span>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="email-modal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Enter Receiver's Email</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="email-form">
+                        <div class="form-group">
+                            <label for="email-input">Email address</label>
+                            <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% comment %} <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include ExcelJS -->
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <!-- Include Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- Include Quagga JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script> {% endcomment %}
+  
+</body>
+</html>

@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block head %}
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}" />
+    <style>
+        table.table-striped tbody tr.expiring-row {
+            background-color: #ff8080; /* Red background color for expiring rows */
+            color: white; /* White text color for expiring rows */
+        }
+
+        .information-text {
+            font-size: 18px;
+            line-height: 1.6;
+            display: none;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+
+        .main-card-header .toggle-icon {
+            cursor: pointer;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<body>
+    <div class="container-fluid py-5" id="content" style="margin-top: 64px; ">
+        <h1 class="text-center mb-5">Legg til produkter</h1>
+
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-8 d-flex justify-content-center align-items-center">
+                    <div class="card shadow mb-4 flex-grow-1">
+                        <div class="card-header d-flex justify-content-between align-items-center main-card-header">
+                            <h6 class="fw-bold m-0 main-card-title">
+                                Informasjon
+                            </h6>
+                            <!-- Icon for toggling card-body -->
+                            <i class="fas fa-chevron-down toggle-icon" id="toggle-icon"></i>
+                        </div>
+                        <div class="card-body information-text" id="card-body" style="height:auto;">
+                          
+                                <p>
+                                    <p class="info-inner-header">
+                                    Varetelling er for å legge til data i lageret.
+                                    </p>
+                                    <br><br>
+                                  
+                                    <span class="info-inner-text">
+                                    1. Strekkodeskanning: Dette vil skanne strekkoden og sjekke med to forskjellige API-er om produktet eksisterer. Hvis ikke, legg det til manuelt.
+                                    <br><br>
+                                    2. Manuell inndata: Her kan brukeren manuelt legge til produktet. Først legger brukeren til 'EAN', og deretter sjekker programmet om strekkoden eksisterer i hver av API-ene.
+                                </span>
+                                    <br><br>
+                                    <p class="info-inner-header">
+                                    Handleliste er for å opprette en handleliste for butikken.
+                                    </p>
+                                    <br><br>
+                                
+                                    <span class="info-inner-text">
+                                    1. Strekkodeskanning: Dette vil skanne strekkoden og sjekke med to forskjellige API-er om produktet eksisterer. Hvis ikke, legg det til manuelt.
+                                    <br><br>
+                                    2. Manuell inndata: Her kan brukeren manuelt legge til produktet. Først legger brukeren til 'EAN', og deretter sjekker programmet om strekkoden eksisterer i hver av API-ene.
+                                    </span>
+                                </p>
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-1"></div>
+            <!-- Product Counting Area -->
+            <div class="col-md-5">
+                <div class="home-option" style="background-color:#FFFFFF;">
+                    <h2 class="text-center">Varetelling</h2>
+                    <div class="text-center">
+                        <a href="/product-counting" class="btn btn-primary">
+                            <i class="fas fa-box"></i> Start varetelling
+                           
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shopping List Area -->
+            <div class="col-md-5">
+                <div class="home-option" style="background-color:#FFFFFF;">
+                    <h2 class="text-center">Handleliste</h2>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-shopping-cart"></i> Start handleliste
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+    
+
+
+    <script>
+        // Get the icon and card-body elements
+        const toggleIcon = document.getElementById('toggle-icon');
+        const cardBody = document.getElementById('card-body');
+
+        // Toggle the visibility of the card-body when the icon is clicked
+        toggleIcon.addEventListener('click', () => {
+            if (cardBody.style.display === 'none') {
+                cardBody.style.display = 'block';
+                toggleIcon.classList.remove('fa-chevron-down');
+                toggleIcon.classList.add('fa-chevron-up');
+            } else {
+                cardBody.style.display = 'none';
+                toggleIcon.classList.remove('fa-chevron-up');
+                toggleIcon.classList.add('fa-chevron-down');
+            }
+        });
+    </script>
+</body>
+{% endblock %}
