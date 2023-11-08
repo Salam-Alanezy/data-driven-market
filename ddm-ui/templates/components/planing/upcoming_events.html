@@ -1,0 +1,19 @@
+{% block content %}
+<div class="col-lg-6 col-md-12 mb-4">
+    <div class="card shadow" style="max-height: 25%;">
+        <div class="card-header bg-primary text-white">Kommende Events</div>
+        <div class="list-group" style="overflow-y: auto">
+            {% for event in events %}
+            <a href="#" class="list-group-item list-group-item-action" style="background-color: {{ event.color }};">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1" style="font-weight: bold">{{ event.evnetNameNO }}</h5>
+                    <small style="color: grey">01.01.2024</small>
+                </div>
+                <p class="mb-2">{{ event.description }}</p>
+                <small style="opacity: 0.6">{{ event.TypicalGoodsinHighDemand }}</small>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
