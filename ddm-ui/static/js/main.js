@@ -67,7 +67,7 @@ $("#manual-input-button").click(function() {
 
 
 function addProduct(product) {
-    fetch('/saveStorageProducts', {
+    fetch('/add-product', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
