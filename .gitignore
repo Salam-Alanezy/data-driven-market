@@ -2,3 +2,4 @@ ddm-ui-react
 *__pycache__
 *venv
 *.env
+*ddm-gui

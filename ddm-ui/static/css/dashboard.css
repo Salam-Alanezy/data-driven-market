@@ -1,3 +1,8 @@
+body, html {
+    max-height: 100vh; /* Setter maksimal høyde til skjermstørrelsen */
+    overflow-y: hidden; /* Forhindrer vertikal scrolling */
+}
+
 .kpi-cards{
     background: #f9fbfa;
     border-color: #f9fbfa;
@@ -24,14 +29,11 @@
 }
 
 .tui-full-calendar-layout.tui-view-1.tui-view-9{
-    height: 30vh !important;
-}
-.tui-full-calendar-month.tui-view-4.tui-view-5.tui-full-calendar-vlayout-container{
-    height: 30vh !important;
+    height: 60vh !important;
 }
 
 .tui-full-calendar-month-week-item{
-    height: 3vh !important;
+    height: 7vh auto !important;
 }
 .main-card-title{
     border-color: #2cd3ac; color:#1f9478
@@ -68,7 +70,11 @@ table .expiring-row {
     
 }
 
-.btn-hamburg{
-    color:#1f9478;
-    font-size: 3vh;
+
+/* Gjør at innholdet tilpasser seg skjermhøyden og forhindrer vertikal scrolling */
+.equal-height {
+    min-height: 80vh; /* Juster høyden etter behov */
+
+
 }
+
