@@ -1,34 +1,40 @@
 import logging
+import os
 
 def logger_config(log_level=logging.INFO, log_file="app.log"):
     """
-    Konfigurer loggeren med ønsket loggnivå og filnavn.
+    Configure the logger with the desired log level and file name.
     
     Args:
-        log_level (int): Loggnivået for loggeren (f.eks. logging.INFO, logging.DEBUG).
-        log_file (str): Filnavn for loggfiler.
+        log_level (int): Log level for the logger (e.g., logging.INFO, logging.DEBUG).
+        log_file (str): File name for log files.
 
     Returns:
-        logger (logging.Logger): Logger-instans.
+        logger (logging.Logger): Logger instance.
     """
-    # Lag et formatteringsobjekt for loggeren
+    # Create the log directory if it doesn't exist
+    log_dir = os.path.dirname(log_file)
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+
+    # Create a formatting object for the logger
     log_formatter = logging.Formatter("%(asctime)s [%(levelname)s] [%(filename)s:%(lineno)d] - %(message)s")
 
-    # Konfigurer loggeren
+    # Configure the logger
     logger = logging.getLogger("app_logger")
     logger.setLevel(log_level)
 
-    # Opprett en filhandler for å lagre loggmeldinger i en fil
+    # Create a file handler to store log messages in a file
     file_handler = logging.FileHandler(log_file)
     file_handler.setLevel(log_level)
     file_handler.setFormatter(log_formatter)
 
-    # Opprett en streamhandler for å sende loggmeldinger til konsollen
+    # Create a stream handler to send log messages to the console
     stream_handler = logging.StreamHandler()
     stream_handler.setLevel(log_level)
     stream_handler.setFormatter(log_formatter)
 
-    # Legg til filhandler og streamhandler i loggeren
+    # Add the file handler and stream handler to the logger
     logger.addHandler(file_handler)
     logger.addHandler(stream_handler)
 
